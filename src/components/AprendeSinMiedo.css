@@ -1,0 +1,202 @@
+.aprende-section {
+  width: 100%;
+  height: 640px;
+}
+
+.aprende-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 640px;
+}
+
+/* Escala proporcional para pantallas mayores a 1280px */
+@media (min-width: 1280px) {
+  .aprende-section {
+    height: calc(640px * (100vw / 1280));
+  }
+
+  .aprende-content {
+    height: calc(640px * (100vw / 1280));
+  }
+
+  .aprende-left {
+    padding: calc(80px * (100vw / 1280)) calc(100px * (100vw / 1280));
+  }
+
+  .aprende-title {
+    font-size: calc(48px * (100vw / 1280));
+    margin-bottom: calc(32px * (100vw / 1280));
+  }
+
+  .aprende-text {
+    font-size: calc(18px * (100vw / 1280));
+    margin-bottom: calc(40px * (100vw / 1280));
+    max-width: calc(500px * (100vw / 1280));
+  }
+
+  .aprende-button {
+    padding: calc(14px * (100vw / 1280)) calc(32px * (100vw / 1280));
+    font-size: calc(16px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+
+  .aprende-right {
+    padding-top: calc(60px * (100vw / 1280));
+  }
+
+  .aprende-right-title {
+    font-size: calc(72px * (100vw / 1280));
+  }
+}
+
+/* Lado izquierdo - contenido texto */
+.aprende-left {
+  background-color: #F5EFE7;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.aprende-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.aprende-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.aprende-button {
+  background-color: #A88B6B;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.aprende-button:hover {
+  background-color: #8B7355;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Lado derecho - imagen */
+.aprende-right {
+  position: relative;
+  background-image: url('/aprende-talleres.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+/* Overlay oscuro para mejorar legibilidad */
+.aprende-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.aprende-right-title {
+  position: relative;
+  z-index: 1;
+  font-size: 72px;
+  font-weight: 400;
+  color: #fff;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+}
+
+/* Responsive */
+@media (max-width: 1279px) {
+  .aprende-content {
+    min-height: 600px;
+  }
+
+  .aprende-left {
+    padding: 60px 60px;
+  }
+
+  .aprende-title {
+    font-size: 40px;
+  }
+
+  .aprende-text {
+    font-size: 16px;
+  }
+
+  .aprende-right-title {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 968px) {
+  .aprende-content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .aprende-left {
+    padding: 50px 40px;
+    min-height: 400px;
+  }
+
+  .aprende-right {
+    min-height: 400px;
+  }
+
+  .aprende-title {
+    font-size: 36px;
+  }
+
+  .aprende-text {
+    font-size: 16px;
+  }
+
+  .aprende-right-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aprende-left {
+    padding: 40px 24px;
+  }
+
+  .aprende-title {
+    font-size: 32px;
+  }
+
+  .aprende-text {
+    font-size: 15px;
+  }
+
+  .aprende-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .aprende-right-title {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,339 @@
+.talleres-section {
+  background-color: #E8D7C3;
+  padding: 80px 60px;
+  height: 640px;
+}
+
+/* Escala proporcional para pantallas mayores a 1280px */
+@media (min-width: 1280px) {
+  .talleres-section {
+    height: calc(640px * (100vw / 1280));
+    padding: calc(80px * (100vw / 1280)) calc(60px * (100vw / 1280));
+  }
+
+  .talleres-container {
+    max-width: calc(1400px * (100vw / 1280));
+  }
+
+  .talleres-title {
+    font-size: calc(48px * (100vw / 1280));
+    margin-bottom: calc(60px * (100vw / 1280));
+  }
+
+  .talleres-grid {
+    gap: calc(30px * (100vw / 1280));
+    margin-bottom: calc(40px * (100vw / 1280));
+  }
+
+  .taller-card {
+    border-radius: calc(8px * (100vw / 1280));
+  }
+
+  .taller-image-container {
+    height: calc(280px * (100vw / 1280));
+  }
+
+  .taller-badges {
+    top: calc(16px * (100vw / 1280));
+    left: calc(16px * (100vw / 1280));
+    right: calc(16px * (100vw / 1280));
+    gap: calc(12px * (100vw / 1280));
+  }
+
+  .taller-type,
+  .taller-rating {
+    padding: calc(6px * (100vw / 1280)) calc(16px * (100vw / 1280));
+    border-radius: calc(20px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .taller-favorite {
+    width: calc(40px * (100vw / 1280));
+    height: calc(40px * (100vw / 1280));
+  }
+
+  .taller-content {
+    padding: calc(24px * (100vw / 1280));
+  }
+
+  .taller-card-title {
+    font-size: calc(22px * (100vw / 1280));
+    margin-bottom: calc(12px * (100vw / 1280));
+  }
+
+  .taller-description {
+    font-size: calc(14px * (100vw / 1280));
+    margin-bottom: calc(20px * (100vw / 1280));
+    min-height: calc(48px * (100vw / 1280));
+  }
+
+  .taller-footer {
+    padding-top: calc(16px * (100vw / 1280));
+  }
+
+  .taller-info {
+    gap: calc(16px * (100vw / 1280));
+  }
+
+  .info-item {
+    gap: calc(6px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .taller-button {
+    padding: calc(10px * (100vw / 1280)) calc(28px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+
+  .talleres-pagination {
+    gap: calc(12px * (100vw / 1280));
+    margin-top: calc(40px * (100vw / 1280));
+  }
+
+  .pagination-dot {
+    width: calc(60px * (100vw / 1280));
+    height: calc(8px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+
+  .pagination-dot.active {
+    width: calc(80px * (100vw / 1280));
+  }
+}
+
+.talleres-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.talleres-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.talleres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Tarjeta de taller */
+.taller-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taller-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.taller-image-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.taller-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.taller-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.taller-type {
+  background-color: #fff;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.taller-rating {
+  background-color: #D4A574;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.taller-favorite {
+  margin-left: auto;
+  background-color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taller-favorite:hover {
+  background-color: #FFE5E5;
+}
+
+.taller-favorite svg {
+  color: #333;
+}
+
+.taller-favorite:hover svg {
+  fill: #FF6B6B;
+  color: #FF6B6B;
+}
+
+/* Contenido de la tarjeta */
+.taller-content {
+  padding: 24px;
+}
+
+.taller-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.taller-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  min-height: 48px;
+}
+
+/* Footer de la tarjeta */
+.taller-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.taller-date {
+  font-size: 14px;
+  color: #666;
+  flex: 1;
+}
+
+.taller-info {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.info-item svg {
+  color: #999;
+}
+
+.taller-button {
+  background-color: #D4A574;
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taller-button:hover {
+  background-color: #C08D5A;
+}
+
+/* Paginación */
+.talleres-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.pagination-dot {
+  width: 60px;
+  height: 8px;
+  background-color: #C0A789;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background-color: #6B5D4F;
+  width: 80px;
+}
+
+.pagination-dot:hover {
+  background-color: #8B7355;
+}
+
+/* Responsive */
+@media (max-width: 1279px) {
+  .talleres-section {
+    padding: 60px 40px;
+  }
+
+  .talleres-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .talleres-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .talleres-section {
+    padding: 40px 20px;
+  }
+
+  .talleres-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .talleres-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .taller-image-container {
+    height: 220px;
+  }
+}
