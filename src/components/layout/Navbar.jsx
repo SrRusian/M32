@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <a href="#talleres">Talleres</a>
+        <Link to="/talleres">Talleres</Link>
         <a href="#pau">Pau</a>
         <Link to="/la-mesa">La Mesa 🍞</Link>
       </div>

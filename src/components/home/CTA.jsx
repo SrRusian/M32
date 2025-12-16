@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './CTA.css'
 
 function CTA() {
@@ -8,7 +9,7 @@ function CTA() {
           Amasemos juntos creatividad, técnica y sabor.<br />
           ¡Únete al próximo taller!
         </h2>
-        <button className="cta-button">Próximos Cursos</button>
+        <Link to="/talleres" className="cta-button">Próximos Cursos</Link>
       </div>
     </section>
   )

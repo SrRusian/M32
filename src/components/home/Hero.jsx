@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
@@ -32,7 +33,7 @@ function Hero() {
         <p className="hero-subtitle">
           Talleres de pan, pastas y recetas caseras paso a paso.
         </p>
-        <button className="hero-button">Ver Talleres</button>
+        <Link to="/talleres" className="hero-button">Ver Talleres</Link>
       </div>
     </section>
   )

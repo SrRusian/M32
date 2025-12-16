@@ -88,6 +88,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .aprende-button:hover {

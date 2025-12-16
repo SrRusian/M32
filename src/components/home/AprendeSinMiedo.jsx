@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './AprendeSinMiedo.css'
 import talleresImage from '../../assets/images/talleresSection.png'
 
@@ -13,7 +14,7 @@ function AprendeSinMiedo() {
             claros y muy creativos. La idea es que disfrutes, aprendas y te
             lleves un pan delicioso... ¡hecho por ti!
           </p>
-          <button className="aprende-button">Explora los talleres</button>
+          <Link to="/talleres" className="aprende-button">Explora los talleres</Link>
         </div>
 
         <div className="aprende-right">

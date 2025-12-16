@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import TalleresPage from './pages/TalleresPage'
 import LaMesaPage from './pages/LaMesaPage'
 import BlogPost from './pages/BlogPost'
 import './App.css'
@@ -9,6 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/talleres" element={<TalleresPage />} />
         <Route path="/la-mesa" element={<LaMesaPage />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>

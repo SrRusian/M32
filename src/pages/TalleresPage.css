@@ -1,0 +1,382 @@
+.talleres-page {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.talleres-page-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.talleres-page-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/talleresHero.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.talleres-page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.talleres-page-title {
+  font-size: 72px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Georgia", serif;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.talleres-page-subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.talleres-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* Featured Workshop */
+.talleres-page-featured {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.featured-workshop-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-workshop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-workshop-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.featured-workshop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.featured-workshop-badges {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.featured-workshop-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featured-workshop-type {
+  background-color: #fff;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.featured-workshop-rating {
+  background-color: #d4a574;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.featured-workshop-tag {
+  background-color: #8b7355;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.featured-workshop-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f8f5f0;
+}
+
+.featured-workshop-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.featured-workshop-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.featured-workshop-info {
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+  color: #666;
+}
+
+.featured-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-info-item svg {
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* Workshops Grid */
+.talleres-page-grid {
+  padding: 60px 0 80px 0;
+  background-color: #e8d7c3;
+}
+
+.talleres-page-section-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000;
+  font-style: italic;
+  font-family: "Georgia", serif;
+}
+
+.workshops-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Cocina con nosotros Section */
+.talleres-page-cta {
+  width: 100%;
+  background-color: #fff;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.talleres-cta-content {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  min-height: 200px;
+  max-width: 100%;
+}
+
+.talleres-cta-left {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+}
+
+.talleres-cta-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  font-family: "Georgia", serif;
+  font-style: italic;
+}
+
+.talleres-cta-right {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 160px;
+}
+
+.talleres-cta-text {
+  background-color: #d4a574;
+  display: flex;
+  align-items: center;
+  padding: 20px 200px 20px 25px;
+}
+
+.talleres-cta-text p {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+}
+
+.talleres-cta-image {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.talleres-cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Responsive */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .talleres-page-hero {
+    height: calc(100vh * (100vw / 1280));
+  }
+
+  .talleres-page-title {
+    font-size: calc(72px * (100vw / 1280));
+  }
+
+  .talleres-page-subtitle {
+    font-size: calc(20px * (100vw / 1280));
+  }
+
+  .featured-workshop-image {
+    height: calc(400px * (100vw / 1280));
+  }
+
+  .featured-workshop-content {
+    padding: calc(40px * (100vw / 1280));
+  }
+
+  .featured-workshop-title {
+    font-size: calc(32px * (100vw / 1280));
+  }
+
+  .featured-workshop-description {
+    font-size: calc(16px * (100vw / 1280));
+  }
+
+  .talleres-page-section-title {
+    font-size: calc(48px * (100vw / 1280));
+  }
+}
+
+@media (max-width: 1279px) {
+  .talleres-page-hero {
+    height: 80vh;
+  }
+
+  .talleres-page-title {
+    font-size: 56px;
+  }
+
+  .talleres-page-subtitle {
+    font-size: 18px;
+  }
+
+  .featured-workshop-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-workshop-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .talleres-page-hero {
+    height: 70vh;
+  }
+
+  .talleres-page-title {
+    font-size: 48px;
+  }
+
+  .talleres-page-subtitle {
+    font-size: 16px;
+  }
+
+  .talleres-page-container {
+    padding: 0 30px;
+  }
+
+  .talleres-page-grid {
+    padding: 40px 20px;
+  }
+
+  .talleres-page-section-title {
+    font-size: 36px;
+  }
+
+  .talleres-cta-content {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .talleres-cta-left {
+    padding: 40px;
+  }
+
+  .talleres-cta-title {
+    font-size: 48px;
+  }
+
+  .talleres-cta-text {
+    padding: 40px;
+  }
+
+  .talleres-cta-text p {
+    font-size: 18px;
+  }
+
+  .talleres-cta-image {
+    height: 300px;
+  }
+}
