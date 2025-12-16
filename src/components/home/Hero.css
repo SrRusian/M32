@@ -7,7 +7,8 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Hero 100vh para pantallas >= 1920px */
@@ -78,7 +79,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* Overlay oscuro opcional para mejorar legibilidad del texto */
@@ -97,8 +98,9 @@
   padding-top: 76px; /* Altura del navbar */
   max-width: 800px;
   color: #fff;
-  z-index: 2;
+  z-index: 3;
   position: relative;
+  pointer-events: auto;
 }
 
 .hero-title {
@@ -129,6 +131,7 @@
   border-radius: 2px;
   text-decoration: none;
   display: inline-block;
+  pointer-events: auto;
 }
 
 .hero-button:hover {

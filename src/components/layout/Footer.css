@@ -4,7 +4,7 @@
   padding: 40px 60px;
   border-top: 1px solid #222;
   display: flex;
-  align-items: center;
+  align-items: center;;
 }
 
 /* Escala proporcional para pantallas mayores a 1280px */
@@ -55,6 +55,10 @@
   justify-self: start;
 }
 
+.footer-logo-link {
+  text-decoration: none;
+}
+
 .footer-logo {
   color: #fff;
   font-size: 32px;
@@ -62,6 +66,11 @@
   font-weight: 400;
   font-style: italic;
   margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo-link:hover .footer-logo {
+  opacity: 0.7;
 }
 
 /* Nav centro */

@@ -6,6 +6,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 /* Escala proporcional para pantallas 1920px */
