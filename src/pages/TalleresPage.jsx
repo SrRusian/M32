@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import './TalleresPage.css'
 import Navbar from '../components/layout/Navbar'
 import TextCarousel from '../components/common/TextCarousel'
 import WorkshopCard from '../components/common/WorkshopCard'
+import WorkshopModal from '../components/common/WorkshopModal'
 import ContactInfo from '../components/layout/ContactInfo'
 import Footer from '../components/layout/Footer'
 import masaMadreImg from '../assets/images/masaMadre.png'
@@ -10,6 +12,8 @@ import raviolisImg from '../assets/images/raviolisRellenos.png'
 import talleresSectionImg from '../assets/images/talleresSection.png'
 
 function TalleresPage() {
+  const [selectedWorkshop, setSelectedWorkshop] = useState(null)
+
   // Taller destacado
   const featuredWorkshop = {
     id: 1,
@@ -21,13 +25,14 @@ function TalleresPage() {
     duration: '5h',
     lessons: 6,
     students: 30,
+    price: 899,
     tag: 'Nuevo'
   }
 
   // Otros talleres
   const workshops = [
     {
-      id: 2,
+      id: 1,
       image: masaMadreImg,
       title: 'Masa Madre desde cero',
       description: 'Aprende a crear, alimentar y hornear con tu propio fermento natural',
@@ -35,25 +40,28 @@ function TalleresPage() {
       rating: 4.5,
       duration: '5h',
       lessons: 6,
-      students: 30
+      students: 30,
+      price: 899
     },
     {
-      id: 3,
+      id: 2,
       image: panMuertoImg,
       title: 'Pan de Muerto',
       description: 'Aprende a preparar pan de muerto esponjoso y aromático, paso a paso, con técnicas fáciles.',
       type: 'Presencial',
       rating: 4.5,
-      date: '27 de Octubre 2025 | 8:00 am'
+      date: '27 de Octubre 2025 | 8:00 am',
+      price: 1299
     },
     {
-      id: 4,
+      id: 3,
       image: raviolisImg,
       title: 'Raviolis y rellenos caseros',
       description: 'Técnicas para hacer raviolis y salsas deliciosas.',
       type: 'Presencial',
       rating: 4.5,
-      date: '6 de Octubre 2025 | 8:00 am'
+      date: '6 de Octubre 2025 | 8:00 am',
+      price: 1499
     }
   ]
 
@@ -75,8 +83,8 @@ function TalleresPage() {
         {/* Featured Workshop */}
         <section className="talleres-page-featured">
           <div className="talleres-page-container">
-            <a 
-              href="/taller/masa-madre"
+            <div 
+              onClick={() => setSelectedWorkshop(featuredWorkshop)}
               className="featured-workshop-card"
             >
               <div className="featured-workshop-image">
@@ -118,7 +126,7 @@ function TalleresPage() {
                   </span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </section>
 
@@ -128,7 +136,11 @@ function TalleresPage() {
             <h2 className="talleres-page-section-title">Más talleres</h2>
             <div className="workshops-grid">
               {workshops.map(workshop => (
-                <WorkshopCard key={workshop.id} workshop={workshop} />
+                <WorkshopCard 
+                  key={workshop.id} 
+                  workshop={workshop}
+                  onCardClick={setSelectedWorkshop}
+                />
               ))}
             </div>
           </div>
@@ -153,6 +165,13 @@ function TalleresPage() {
       </main>
       <ContactInfo />
       <Footer />
+
+      {selectedWorkshop && (
+        <WorkshopModal 
+          workshop={selectedWorkshop}
+          onClose={() => setSelectedWorkshop(null)}
+        />
+      )}
     </>
   )
 }

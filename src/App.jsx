@@ -8,6 +8,7 @@ import LaMesaPage from './pages/LaMesaPage'
 import PauPage from './pages/PauPage'
 import BlogPost from './pages/BlogPost'
 import AuthPage from './pages/AuthPage'
+import ContentDetailPage from './pages/ContentDetailPage'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/talleres" element={<TalleresPage />} />
           <Route path="/pau" element={<PauPage />} />
           <Route path="/la-mesa" element={<LaMesaPage />} />
+          <Route path="/la-mesa/:slug" element={<ContentDetailPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/cuenta" element={<AuthPage />} />
         </Routes>

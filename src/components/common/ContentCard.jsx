@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import './ContentCard.css'
 
 function ContentCard({ content }) {
   return (
-    <div className="content-card">
+    <Link to={`/la-mesa/${content.slug}`} className="content-card">
       <div className="content-card-image-container">
         <img src={content.image} alt={content.title} className="content-card-image" />
         <div className="content-card-badges">
@@ -67,10 +68,15 @@ function ContentCard({ content }) {
               )}
             </div>
           )}
-          <button className="content-button">Ver</button>
+          <span className="content-view-text">
+            Ver más
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

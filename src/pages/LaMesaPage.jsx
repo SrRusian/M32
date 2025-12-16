@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './LaMesaPage.css'
 import Navbar from '../components/layout/Navbar'
 import TextCarousel from '../components/common/TextCarousel'
@@ -13,10 +14,11 @@ function LaMesaPage() {
   // Artículo destacado (más reciente)
   const featuredPost = {
     id: 1,
+    slug: 'cuidar-masa-madre',
     image: laMesa,
     title: 'Cómo cuidar de tu Masa Madre',
     author: 'Por Pau',
-    category: 'Tips',
+    category: 'Tip',
     tag: 'Nuevo'
   }
 
@@ -24,16 +26,18 @@ function LaMesaPage() {
   const contents = [
     {
       id: 2,
+      slug: 'masa-madre-cero',
       image: masaMadreImg,
       title: 'Masa Madre desde cero',
       description: 'Aprende a crear, alimentar y hornear con tu propio fermento natural',
       category: 'Receta',
-      duration: '5h',
-      lessons: 6,
+      duration: '7d',
+      lessons: 3,
       students: 30
     },
     {
       id: 3,
+      slug: 'pan-muerto-tradicional',
       image: panMuertoImg,
       title: 'Pan de Muerto tradicional',
       description: 'Aprende a preparar pan de muerto esponjoso y aromático, paso a paso, con técnicas fáciles.',
@@ -42,6 +46,7 @@ function LaMesaPage() {
     },
     {
       id: 4,
+      slug: 'raviolis-rellenos-caseros',
       image: raviolisImg,
       title: 'Raviolis y rellenos caseros',
       description: 'Técnicas para hacer raviolis y salsas deliciosas.',
@@ -71,14 +76,14 @@ function LaMesaPage() {
         {/* Featured Post */}
         <section className="lamesa-page-featured">
           <div className="lamesa-page-container">
-            <a 
-              href="/blog/como-cuidar-tu-masa-madre"
+            <Link 
+              to={`/la-mesa/${featuredPost.slug}`}
               className="featured-card"
             >
               <div className="featured-card-image">
                 <img src={featuredPost.image} alt={featuredPost.title} />
                 <div className="featured-card-badges">
-                  <span className="featured-badge-type">{featuredPost.type}</span>
+                  <span className="featured-badge-type">{featuredPost.category}</span>
                   <span className="featured-badge-new">{featuredPost.tag}</span>
                 </div>
               </div>
@@ -86,7 +91,7 @@ function LaMesaPage() {
                 <h2 className="featured-card-title">{featuredPost.title}</h2>
                 <p className="featured-card-author">{featuredPost.author}</p>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
 

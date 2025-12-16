@@ -40,6 +40,25 @@ export function CartProvider({ children }) {
     ))
   }
 
+  const addToCart = (workshop) => {
+    const existingItem = cartItems.find(item => item.id === workshop.id)
+    
+    if (existingItem) {
+      updateQuantity(workshop.id, existingItem.quantity + 1)
+    } else {
+      setCartItems([...cartItems, {
+        id: workshop.id,
+        name: workshop.title,
+        type: workshop.type,
+        price: workshop.price,
+        quantity: 1,
+        image: workshop.image
+      }])
+    }
+    
+    setIsCartOpen(true)
+  }
+
   const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0)
   const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
@@ -51,6 +70,7 @@ export function CartProvider({ children }) {
       closeCart,
       removeItem,
       updateQuantity,
+      addToCart,
       total,
       itemCount
     }}>

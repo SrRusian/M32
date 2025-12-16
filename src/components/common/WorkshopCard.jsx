@@ -1,8 +1,8 @@
 import './WorkshopCard.css'
 
-function WorkshopCard({ workshop }) {
+function WorkshopCard({ workshop, onCardClick }) {
   return (
-    <div className="workshop-card">
+    <div className="workshop-card" onClick={() => onCardClick && onCardClick(workshop)}>
       <div className="workshop-card-image-container">
         <img src={workshop.image} alt={workshop.title} className="workshop-card-image" />
         <div className="workshop-card-badges">
@@ -71,7 +71,12 @@ function WorkshopCard({ workshop }) {
               )}
             </div>
           )}
-          <button className="workshop-button">Ver</button>
+          {workshop.price && (
+            <div className="workshop-price">
+              <span className="workshop-price-amount">${workshop.price.toLocaleString()}</span>
+              <span className="workshop-price-currency">MXN</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

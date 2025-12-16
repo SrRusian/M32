@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import './Talleres.css'
 import WorkshopCard from '../common/WorkshopCard'
+import WorkshopModal from '../common/WorkshopModal'
 import masaMadreImg from '../../assets/images/masaMadre.png'
 import panMuertoImg from '../../assets/images/panMuerto.png'
 import raviolisImg from '../../assets/images/raviolisRellenos.png'
 
 function Talleres() {
+  const [selectedWorkshop, setSelectedWorkshop] = useState(null)
+
   const talleres = [
     {
       id: 1,
@@ -16,6 +20,7 @@ function Talleres() {
       duration: '5h',
       lessons: 6,
       students: 30,
+      price: 899,
       isOnline: true
     },
     {
@@ -26,6 +31,7 @@ function Talleres() {
       type: 'Presencial',
       rating: 4.5,
       date: '27 de Octubre 2025 | 8:00 am',
+      price: 1299,
       isOnline: false
     },
     {
@@ -36,22 +42,36 @@ function Talleres() {
       type: 'Presencial',
       rating: 4.5,
       date: '6 de Octubre 2025 | 8:00 am',
+      price: 1499,
       isOnline: false
     }
   ]
 
   return (
-    <section className="talleres-section">
-      <div className="talleres-container">
-        <h2 className="talleres-title">Próximos talleres</h2>
+    <>
+      <section className="talleres-section">
+        <div className="talleres-container">
+          <h2 className="talleres-title">Próximos talleres</h2>
 
-        <div className="talleres-grid">
-          {talleres.map(taller => (
-            <WorkshopCard key={taller.id} workshop={taller} />
-          ))}
+          <div className="talleres-grid">
+            {talleres.map(taller => (
+              <WorkshopCard 
+                key={taller.id} 
+                workshop={taller}
+                onCardClick={setSelectedWorkshop}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {selectedWorkshop && (
+        <WorkshopModal 
+          workshop={selectedWorkshop}
+          onClose={() => setSelectedWorkshop(null)}
+        />
+      )}
+    </>
   )
 }
 

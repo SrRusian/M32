@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './LaMesa.css'
 import masaMadreImg from '../../assets/images/masaMadre.png'
 import panAvenaImg from '../../assets/images/panAvena.png'
@@ -6,12 +7,14 @@ function LaMesa() {
   const posts = [
     {
       id: 1,
+      slug: 'cuidar-masa-madre',
       image: masaMadreImg,
       title: 'Cómo cuidar tu masa madre',
       author: 'Por Pau'
     },
     {
       id: 2,
+      slug: 'masa-madre-cero',
       image: panAvenaImg,
       title: 'Receta fácil: Pan rápido de Avena',
       author: 'Por Pau'
@@ -32,9 +35,9 @@ function LaMesa() {
 
         <div className="lamesa-right">
           {posts.map(post => (
-            <a 
+            <Link 
               key={post.id} 
-              href={`/blog/${post.id === 1 ? 'como-cuidar-tu-masa-madre' : 'receta-pan-avena'}`}
+              to={`/la-mesa/${post.slug}`}
               className="lamesa-card"
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
@@ -45,7 +48,7 @@ function LaMesa() {
                 <h3 className="lamesa-card-title">{post.title}</h3>
                 <p className="lamesa-card-author">{post.author}</p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
