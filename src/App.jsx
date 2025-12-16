@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/common/ScrollToTop'
 import Home from './pages/Home'
 import TalleresPage from './pages/TalleresPage'
 import LaMesaPage from './pages/LaMesaPage'
@@ -9,6 +10,7 @@ import './App.css'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/talleres" element={<TalleresPage />} />
