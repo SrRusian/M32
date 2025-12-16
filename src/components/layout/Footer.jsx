@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import logoImg from '../../assets/logo/Brand-logo-03.png'
 import './Footer.css'
 
 function Footer() {
@@ -7,15 +8,15 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <Link to="/" className="footer-logo-link">
-            <h2 className="footer-logo">Molino32</h2>
+            <img src={logoImg} alt="Molino32" className="footer-logo-image" />
           </Link>
         </div>
 
         <div className="footer-center">
           <nav className="footer-nav">
-            <Link to="/talleres">Talleres</Link>
-            <Link to="/pau">Pau</Link>
-            <Link to="/la-mesa">La Mesa🍞</Link>
+            <NavLink to="/talleres">Talleres</NavLink>
+            <NavLink to="/pau">Pau</NavLink>
+            <NavLink to="/la-mesa">La Mesa🍞</NavLink>
           </nav>
         </div>
 

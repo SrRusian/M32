@@ -105,6 +105,14 @@
   width: 100%;
 }
 
+.navbar-left a.active {
+  color: rgb(205, 157, 101);
+}
+
+.navbar-left a.active::after {
+  width: 100%;
+}
+
 .navbar-center {
   justify-self: center;
 }
@@ -147,6 +155,10 @@
 .navbar-right .cart-button:hover {
   color: rgb(205, 157, 101);
   transform: scale(1.1);
+}
+
+.navbar-right .icon-link.active {
+  color: rgb(205, 157, 101);
 }
 
 .cart-badge {

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import logoImg from '../../assets/logo/Brand-logo-03.png'
 import './Navbar.css'
@@ -9,9 +9,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/talleres">Talleres</Link>
-        <Link to="/pau">Pau</Link>
-        <Link to="/la-mesa">La Mesa 🍞</Link>
+        <NavLink to="/talleres">Talleres</NavLink>
+        <NavLink to="/pau">Pau</NavLink>
+        <NavLink to="/la-mesa">La Mesa 🍞</NavLink>
       </div>
 
       <div className="navbar-center">
@@ -29,12 +29,12 @@ function Navbar() {
           </svg>
           {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
         </button>
-        <Link to="/cuenta" className="icon-link">
+        <NavLink to="/cuenta" className="icon-link">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
           </svg>
-        </Link>
+        </NavLink>
       </div>
     </nav>
   )
