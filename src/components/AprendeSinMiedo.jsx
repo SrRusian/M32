@@ -1,4 +1,5 @@
 import './AprendeSinMiedo.css'
+import talleresImage from '../assets/images/talleresSection.png'
 
 function AprendeSinMiedo() {
   return (
@@ -16,8 +17,10 @@ function AprendeSinMiedo() {
         </div>
 
         <div className="aprende-right">
-          <h2 className="aprende-right-title">Talleres</h2>
-          {/* Imagen de fondo en CSS */}
+          <div className="aprende-right-overlay">
+            <h2 className="aprende-right-title">Talleres</h2>
+          </div>
+          <img src={talleresImage} alt="Talleres" className="aprende-right-image" />
         </div>
       </div>
     </section>

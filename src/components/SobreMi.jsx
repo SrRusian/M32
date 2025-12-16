@@ -1,12 +1,15 @@
 import './SobreMi.css'
+import sobreMiImage from '../assets/images/sobreMi.png'
 
 function SobreMi() {
   return (
     <section className="sobremi-section">
       <div className="sobremi-content">
         <div className="sobremi-left">
-          <h2 className="sobremi-left-title">Sobre mí</h2>
-          {/* Imagen de fondo en CSS */}
+          <div className="sobremi-left-overlay">
+            <h2 className="sobremi-left-title">Sobre mí</h2>
+          </div>
+          <img src={sobreMiImage} alt="Sobre mí" className="sobremi-left-image" />
         </div>
 
         <div className="sobremi-right">

@@ -1,12 +1,13 @@
 .sobremi-section {
   width: 100%;
-  height: 640px;
+  height: 730px;
+  min-height: 600px;
 }
 
 .sobremi-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 640px;
+  height: 100%;
 }
 
 /* Escala proporcional para pantallas mayores a 1280px */
@@ -29,7 +30,7 @@
 
   .sobremi-right {
     padding: calc(80px * (100vw / 1280)) calc(100px * (100vw / 1280));
-    border-left: calc(4px * (100vw / 1280)) solid #C9A882;
+    border-left: calc(4px * (100vw / 1280)) solid #c9a882;
   }
 
   .sobremi-title {
@@ -53,68 +54,93 @@
 /* Lado izquierdo - imagen */
 .sobremi-left {
   position: relative;
-  background-image: url('/sobremi-pau.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  background-color: #b8b8b8;
+}
+
+.sobremi-left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  z-index: 0;
+}
+
+.sobremi-left-overlay {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 60px;
+  padding-top: 40px;
+  padding-left: 50px;
+  z-index: 2;
 }
 
 .sobremi-left-title {
-  position: relative;
-  z-index: 1;
-  font-size: 72px;
-  font-weight: 400;
+  font-size: 50px;
+  font-weight: 600;
   color: #fff;
   font-style: italic;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", "Times New Roman", serif;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -3px;
 }
 
 /* Lado derecho - contenido texto */
 .sobremi-right {
-  background-color: #F8F5F0;
-  padding: 80px 100px;
+  background-color: #f8f5f0;
+  padding: 0 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  border-left: 4px solid #C9A882;
 }
 
 .sobremi-title {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   color: #000;
   line-height: 1.2;
 }
 
 .sobremi-text {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 36px;
   max-width: 500px;
 }
 
 .sobremi-button {
-  background-color: #A88B6B;
+  background-color: #c29c6d;
   color: #fff;
   border: none;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 16px 40px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 4px;
 }
 
 .sobremi-button:hover {
-  background-color: #8B7355;
+  background-color: #a87d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sobremi-button:hover {
+  background-color: #8b7355;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -162,7 +188,7 @@
     min-height: 400px;
     order: 2;
     border-left: none;
-    border-top: 4px solid #C9A882;
+    border-top: 4px solid #c9a882;
   }
 
   .sobremi-title {
