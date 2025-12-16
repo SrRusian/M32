@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import './AuthPage.css'
 
 function AuthPage() {
+  const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(true)
   const [formData, setFormData] = useState({
     name: '',
@@ -24,6 +26,8 @@ function AuthPage() {
     if (isLogin) {
       // Handle login
       console.log('Login:', { email: formData.email, password: formData.password })
+      // Redirigir a perfil
+      navigate('/perfil')
     } else {
       // Handle register
       if (formData.password !== formData.confirmPassword) {
@@ -31,6 +35,8 @@ function AuthPage() {
         return
       }
       console.log('Register:', formData)
+      // Redirigir a perfil después de registro
+      navigate('/perfil')
     }
   }
 

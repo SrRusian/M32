@@ -29,7 +29,14 @@ function Navbar() {
           </svg>
           {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
         </button>
-        <NavLink to="/cuenta" className="icon-link">
+        <NavLink 
+          to="/cuenta" 
+          className={({ isActive }) => {
+            const currentPath = window.location.pathname
+            const isAccountActive = isActive || currentPath === '/perfil'
+            return `icon-link ${isAccountActive ? 'active' : ''}`
+          }}
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>

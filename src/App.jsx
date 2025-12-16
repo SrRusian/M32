@@ -8,6 +8,7 @@ import LaMesaPage from './pages/LaMesaPage'
 import PauPage from './pages/PauPage'
 import BlogPost from './pages/BlogPost'
 import AuthPage from './pages/AuthPage'
+import AccountProfilePage from './pages/AccountProfilePage'
 import ContentDetailPage from './pages/ContentDetailPage'
 import './App.css'
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/la-mesa/:slug" element={<ContentDetailPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/cuenta" element={<AuthPage />} />
+          <Route path="/perfil" element={<AccountProfilePage />} />
         </Routes>
       </Router>
     </CartProvider>

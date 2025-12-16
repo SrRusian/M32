@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import ContactInfo from '../components/layout/ContactInfo'
 import Footer from '../components/layout/Footer'
@@ -10,6 +10,7 @@ import raviolisImg from '../assets/images/raviolisRellenos.png'
 
 function ContentDetailPage() {
   const { slug } = useParams()
+  const navigate = useNavigate()
 
   // Datos de prueba - simula lo que vendría de BD
   const contentData = {
@@ -173,6 +174,12 @@ function ContentDetailPage() {
   return (
     <>
       <Navbar />
+      <button onClick={() => navigate(-1)} className="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Regresar
+      </button>
       <main className="content-detail-page">
         {/* Hero with image */}
         <section className="content-hero">
