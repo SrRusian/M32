@@ -1,10 +1,13 @@
 import './Talleres.css'
+import masaMadreImg from '../assets/images/masaMadre.png'
+import panMuertoImg from '../assets/images/panMuerto.png'
+import raviolisImg from '../assets/images/raviolisRellenos.png'
 
 function Talleres() {
   const talleres = [
     {
       id: 1,
-      image: '/talleres/masa-madre.jpg',
+      image: masaMadreImg,
       title: 'Masa Madre desde cero',
       description: 'Aprende a crear, alimentar y hornear con tu propio fermento natural',
       type: 'Online',
@@ -12,25 +15,27 @@ function Talleres() {
       duration: '5h',
       lessons: 6,
       students: 30,
-      date: null
+      isPresencial: false
     },
     {
       id: 2,
-      image: '/talleres/pan-muerto.jpg',
+      image: panMuertoImg,
       title: 'Pan de Muerto',
       description: 'Aprende a preparar pan de muerto esponjoso y aromático, paso a paso, con técnicas fáciles.',
       type: 'Presencial',
       rating: 4.5,
-      date: '27 de Octubre 2025 | 8:00 am'
+      date: '27 de Octubre 2025 | 8:00 am',
+      isPresencial: true
     },
     {
       id: 3,
-      image: '/talleres/raviolis.jpg',
+      image: raviolisImg,
       title: 'Raviolis y rellenos caseros',
       description: 'Técnicas para hacer raviolis y salsas deliciosas.',
       type: 'Presencial',
       rating: 4.5,
-      date: '6 de Octubre 2025 | 8:00 am'
+      date: '6 de Octubre 2025 | 8:00 am',
+      isPresencial: true
     }
   ]
 
@@ -46,14 +51,16 @@ function Talleres() {
                 <img src={taller.image} alt={taller.title} className="taller-image" />
                 <div className="taller-badges">
                   <span className="taller-type">{taller.type}</span>
-                  <span className="taller-rating">
-                    ⭐ {taller.rating}
-                  </span>
-                  <button className="taller-favorite">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                  </button>
+                  <div className="taller-badges-right">
+                    <span className="taller-rating">
+                      ★ {taller.rating}
+                    </span>
+                    <button className="taller-favorite">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -62,8 +69,16 @@ function Talleres() {
                 <p className="taller-description">{taller.description}</p>
 
                 <div className="taller-footer">
-                  {taller.date ? (
-                    <span className="taller-date">{taller.date}</span>
+                  {taller.isPresencial ? (
+                    <div className="taller-date-info">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                      </svg>
+                      <span className="taller-date">{taller.date}</span>
+                    </div>
                   ) : (
                     <div className="taller-info">
                       <span className="info-item">
@@ -96,12 +111,6 @@ function Talleres() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Indicadores de paginación */}
-        <div className="talleres-pagination">
-          <span className="pagination-dot active"></span>
-          <span className="pagination-dot"></span>
         </div>
       </div>
     </section>

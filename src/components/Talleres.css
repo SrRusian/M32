@@ -1,14 +1,106 @@
 .talleres-section {
-  background-color: #E8D7C3;
-  padding: 80px 60px;
-  height: 640px;
+  background-color: #e8d7c3;
+  padding: 50px 60px 50px 60px;
+}
+
+/* Talleres para pantallas >= 1920px */
+@media (min-width: 1920px) {
+  .talleres-section {
+    padding: 50px 60px;
+  }
+
+  .talleres-grid {
+    gap: 20px;
+  }
+
+  .taller-card {
+    width: 300px;
+  }
+
+  .taller-image-container {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  .talleres-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .taller-content {
+    padding: 24px;
+  }
+
+  .taller-card-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .taller-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 48px;
+  }
+
+  .taller-footer {
+    padding-top: 16px;
+  }
+
+  .taller-info {
+    gap: 16px;
+  }
+
+  .info-item {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .taller-button {
+    padding: 10px 28px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .talleres-pagination {
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .pagination-dot {
+    width: 60px;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .pagination-dot.active {
+    width: 80px;
+  }
+
+  .taller-badges {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+
+  .taller-type,
+  .taller-rating {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  .taller-favorite {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* Escala proporcional para pantallas mayores a 1280px */
-@media (min-width: 1280px) {
+@media (min-width: 1280px) and (max-width: 1919px) {
   .talleres-section {
-    height: calc(640px * (100vw / 1280));
-    padding: calc(80px * (100vw / 1280)) calc(60px * (100vw / 1280));
+    padding: 50px 60px;
   }
 
   .talleres-container {
@@ -17,12 +109,11 @@
 
   .talleres-title {
     font-size: calc(48px * (100vw / 1280));
-    margin-bottom: calc(60px * (100vw / 1280));
+    margin-bottom: 40px;
   }
 
   .talleres-grid {
-    gap: calc(30px * (100vw / 1280));
-    margin-bottom: calc(40px * (100vw / 1280));
+    gap: 16px;
   }
 
   .taller-card {
@@ -30,7 +121,7 @@
   }
 
   .taller-image-container {
-    height: calc(280px * (100vw / 1280));
+    height: 220px;
   }
 
   .taller-badges {
@@ -111,15 +202,15 @@
   font-size: 48px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   color: #000;
 }
 
 .talleres-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* Tarjeta de taller */
@@ -129,6 +220,10 @@
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .taller-card:hover {
@@ -139,14 +234,21 @@
 .taller-image-container {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 220px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
 }
 
 .taller-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .taller-badges {
@@ -156,7 +258,14 @@
   right: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
+}
+
+.taller-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .taller-type {
@@ -169,23 +278,22 @@
 }
 
 .taller-rating {
-  background-color: #D4A574;
+  background-color: #d4a574;
   color: #fff;
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .taller-favorite {
-  margin-left: auto;
   background-color: #fff;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -195,7 +303,7 @@
 }
 
 .taller-favorite:hover {
-  background-color: #FFE5E5;
+  background-color: #ffe5e5;
 }
 
 .taller-favorite svg {
@@ -203,28 +311,28 @@
 }
 
 .taller-favorite:hover svg {
-  fill: #FF6B6B;
-  color: #FF6B6B;
+  fill: #ff6b6b;
+  color: #ff6b6b;
 }
 
 /* Contenido de la tarjeta */
 .taller-content {
-  padding: 24px;
+  padding: 16px;
 }
 
 .taller-card-title {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: #000;
 }
 
 .taller-description {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.5;
   color: #555;
-  margin-bottom: 20px;
-  min-height: 48px;
+  margin-bottom: 0;
+  min-height: 40px;
 }
 
 /* Footer de la tarjeta */
@@ -232,14 +340,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid #E5E5E5;
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 12px;
+}
+
+.taller-date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.taller-date-info svg {
+  color: #666;
+  flex-shrink: 0;
 }
 
 .taller-date {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
-  flex: 1;
 }
 
 .taller-info {
@@ -252,7 +372,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
 }
 
@@ -261,7 +381,7 @@
 }
 
 .taller-button {
-  background-color: #D4A574;
+  background-color: #d4a574;
   color: #000;
   border: none;
   padding: 10px 28px;
@@ -273,7 +393,7 @@
 }
 
 .taller-button:hover {
-  background-color: #C08D5A;
+  background-color: #c08d5a;
 }
 
 /* Paginación */
@@ -287,19 +407,19 @@
 .pagination-dot {
   width: 60px;
   height: 8px;
-  background-color: #C0A789;
+  background-color: #c0a789;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .pagination-dot.active {
-  background-color: #6B5D4F;
+  background-color: #6b5d4f;
   width: 80px;
 }
 
 .pagination-dot:hover {
-  background-color: #8B7355;
+  background-color: #8b7355;
 }
 
 /* Responsive */
