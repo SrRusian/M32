@@ -1,5 +1,6 @@
 import './PauPage.css'
 import Navbar from '../components/layout/Navbar'
+import ContactInfo from '../components/layout/ContactInfo'
 import Footer from '../components/layout/Footer'
 import TextCarousel from '../components/common/TextCarousel'
 import sobreMiImg from '../assets/images/sobreMi.png'
@@ -38,6 +39,7 @@ function PauPage() {
           </section>
         </div>
       </main>
+      <ContactInfo />
       <Footer />
     </>
   )

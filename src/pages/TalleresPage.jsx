@@ -2,6 +2,7 @@ import './TalleresPage.css'
 import Navbar from '../components/layout/Navbar'
 import TextCarousel from '../components/common/TextCarousel'
 import WorkshopCard from '../components/common/WorkshopCard'
+import ContactInfo from '../components/layout/ContactInfo'
 import Footer from '../components/layout/Footer'
 import masaMadreImg from '../assets/images/masaMadre.png'
 import panMuertoImg from '../assets/images/panMuerto.png'
@@ -150,6 +151,7 @@ function TalleresPage() {
           </div>
         </section>
       </main>
+      <ContactInfo />
       <Footer />
     </>
   )

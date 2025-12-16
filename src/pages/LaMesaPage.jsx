@@ -2,6 +2,7 @@ import './LaMesaPage.css'
 import Navbar from '../components/layout/Navbar'
 import TextCarousel from '../components/common/TextCarousel'
 import ContentCard from '../components/common/ContentCard'
+import ContactInfo from '../components/layout/ContactInfo'
 import Footer from '../components/layout/Footer'
 import laMesa from '../assets/images/laMesa1.png'
 import masaMadreImg from '../assets/images/masaMadre.png'
@@ -100,6 +101,7 @@ function LaMesaPage() {
           </div>
         </section>
       </main>
+      <ContactInfo />
       <Footer />
     </>
   )

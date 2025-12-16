@@ -1,0 +1,190 @@
+.contact-info {
+  background-color: #e8d7c3;
+  padding: 80px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Columna izquierda - Logo */
+.contact-left {
+  justify-self: start;
+}
+
+.contact-logo {
+  font-size: 72px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Columna centro - Email */
+.contact-center {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  font-weight: 400;
+}
+
+.contact-link {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #d4a574;
+}
+
+/* Columna derecha - Dirección y Copyright */
+.contact-right {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: right;
+}
+
+.contact-text {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-copyright {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive para pantallas >= 1920px */
+@media (min-width: 1920px) {
+  .contact-info {
+    padding: 100px 80px;
+  }
+
+  .contact-content {
+    gap: 80px;
+  }
+
+  .contact-logo {
+    font-size: 96px;
+  }
+
+  .contact-label,
+  .contact-link,
+  .contact-text {
+    font-size: 18px;
+  }
+
+  .contact-copyright {
+    font-size: 15px;
+  }
+}
+
+/* Escala proporcional para pantallas 1280px-1919px */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .contact-info {
+    padding: calc(80px * (100vw / 1280)) calc(60px * (100vw / 1280));
+  }
+
+  .contact-content {
+    gap: calc(60px * (100vw / 1280));
+  }
+
+  .contact-logo {
+    font-size: calc(72px * (100vw / 1280));
+  }
+
+  .contact-label,
+  .contact-link,
+  .contact-text {
+    font-size: calc(16px * (100vw / 1280));
+  }
+
+  .contact-copyright {
+    font-size: calc(14px * (100vw / 1280));
+  }
+}
+
+/* Responsive para pantallas menores a 1280px */
+@media (max-width: 1279px) {
+  .contact-info {
+    padding: 60px 30px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .contact-left,
+  .contact-center,
+  .contact-right {
+    justify-self: center;
+  }
+
+  .contact-right {
+    text-align: center;
+  }
+
+  .contact-logo {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 40px 20px;
+  }
+
+  .contact-content {
+    gap: 30px;
+  }
+
+  .contact-logo {
+    font-size: 48px;
+  }
+
+  .contact-label,
+  .contact-link,
+  .contact-text {
+    font-size: 14px;
+  }
+
+  .contact-copyright {
+    font-size: 12px;
+  }
+}
