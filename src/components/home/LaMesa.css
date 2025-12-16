@@ -1,0 +1,251 @@
+.lamesa-section {
+  width: 100%;
+  height: 730px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.lamesa-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+/* Escala proporcional para pantallas mayores a 1280px */
+@media (min-width: 1280px) {
+  .lamesa-section {
+    height: calc(800px * (100vw / 1280));
+  }
+
+  .lamesa-content {
+    height: calc(800px * (100vw / 1280));
+  }
+
+  .lamesa-left {
+    padding: calc(80px * (100vw / 1280)) calc(100px * (100vw / 1280));
+  }
+
+  .lamesa-title {
+    font-size: calc(72px * (100vw / 1280));
+    margin-bottom: calc(40px * (100vw / 1280));
+  }
+
+  .lamesa-description {
+    font-size: calc(24px * (100vw / 1280));
+    margin-bottom: calc(32px * (100vw / 1280));
+    max-width: calc(450px * (100vw / 1280));
+  }
+
+  .lamesa-author {
+    font-size: calc(16px * (100vw / 1280));
+  }
+
+  .lamesa-card-content {
+    padding: calc(40px * (100vw / 1280));
+  }
+
+  .lamesa-card-title {
+    font-size: calc(28px * (100vw / 1280));
+    margin-bottom: calc(12px * (100vw / 1280));
+  }
+
+  .lamesa-card-author {
+    font-size: calc(16px * (100vw / 1280));
+  }
+}
+
+/* Lado izquierdo - texto */
+.lamesa-left {
+  background-color: #f5f5f5;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lamesa-title {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #000;
+  line-height: 1.1;
+  font-style: italic;
+  font-family: "Georgia", serif;
+}
+
+.lamesa-description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000;
+  margin-bottom: 24px;
+  max-width: 420px;
+}
+
+.lamesa-author {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Lado derecho - tarjetas */
+.lamesa-right {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.lamesa-card {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lamesa-card:hover {
+  transform: scale(1.02);
+}
+
+.lamesa-card:first-child {
+  border-bottom: 2px solid #8b7355;
+}
+
+.lamesa-card-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lamesa-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.lamesa-card:hover .lamesa-card-image img {
+  transform: scale(1.05);
+}
+
+.lamesa-card-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #b8a99a;
+}
+
+.lamesa-card:nth-child(2) .lamesa-card-content {
+  background-color: #d4c4b0;
+}
+
+.lamesa-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+  line-height: 1.3;
+}
+
+.lamesa-card-author {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1279px) {
+  .lamesa-content {
+    min-height: 600px;
+  }
+
+  .lamesa-left {
+    padding: 60px 60px;
+  }
+
+  .lamesa-title {
+    font-size: 60px;
+  }
+
+  .lamesa-description {
+    font-size: 20px;
+  }
+
+  .lamesa-card-content {
+    padding: 30px;
+  }
+
+  .lamesa-card-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 968px) {
+  .lamesa-content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .lamesa-left {
+    padding: 50px 40px;
+    min-height: 300px;
+  }
+
+  .lamesa-right {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .lamesa-card {
+    grid-template-columns: 1fr;
+    min-height: 400px;
+  }
+
+  .lamesa-card:first-child {
+    border-bottom: none;
+    border-bottom: 2px solid #8b7355;
+  }
+
+  .lamesa-card-image {
+    min-height: 250px;
+  }
+
+  .lamesa-title {
+    font-size: 52px;
+  }
+
+  .lamesa-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lamesa-left {
+    padding: 40px 24px;
+  }
+
+  .lamesa-title {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+
+  .lamesa-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .lamesa-card-content {
+    padding: 24px;
+  }
+
+  .lamesa-card-title {
+    font-size: 20px;
+  }
+
+  .lamesa-card-author {
+    font-size: 14px;
+  }
+}

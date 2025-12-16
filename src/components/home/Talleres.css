@@ -1,0 +1,461 @@
+.talleres-section {
+  background-color: #e8d7c3;
+  padding: 50px 60px 50px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Talleres para pantallas >= 1920px */
+@media (min-width: 1920px) {
+  .talleres-section {
+    padding: 50px 60px;
+  }
+
+  .talleres-grid {
+    gap: 20px;
+  }
+
+  .taller-card {
+    width: 300px;
+  }
+
+  .taller-image-container {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  .talleres-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .taller-content {
+    padding: 24px;
+  }
+
+  .taller-card-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .taller-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 48px;
+  }
+
+  .taller-footer {
+    padding-top: 16px;
+  }
+
+  .taller-info {
+    gap: 16px;
+  }
+
+  .info-item {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .taller-button {
+    padding: 10px 28px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .talleres-pagination {
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .pagination-dot {
+    width: 60px;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .pagination-dot.active {
+    width: 80px;
+  }
+
+  .taller-badges {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+
+  .taller-type,
+  .taller-rating {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  .taller-favorite {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Escala proporcional para pantallas mayores a 1280px */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .talleres-section {
+    padding: 50px 60px;
+  }
+
+  .talleres-container {
+    max-width: calc(1400px * (100vw / 1280));
+  }
+
+  .talleres-title {
+    font-size: calc(48px * (100vw / 1280));
+    margin-bottom: 40px;
+  }
+
+  .talleres-grid {
+    gap: 16px;
+  }
+
+  .taller-card {
+    border-radius: calc(8px * (100vw / 1280));
+  }
+
+  .taller-image-container {
+    height: 220px;
+  }
+
+  .taller-badges {
+    top: calc(16px * (100vw / 1280));
+    left: calc(16px * (100vw / 1280));
+    right: calc(16px * (100vw / 1280));
+    gap: calc(12px * (100vw / 1280));
+  }
+
+  .taller-type,
+  .taller-rating {
+    padding: calc(6px * (100vw / 1280)) calc(16px * (100vw / 1280));
+    border-radius: calc(20px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .taller-favorite {
+    width: calc(40px * (100vw / 1280));
+    height: calc(40px * (100vw / 1280));
+  }
+
+  .taller-content {
+    padding: calc(24px * (100vw / 1280));
+  }
+
+  .taller-card-title {
+    font-size: calc(22px * (100vw / 1280));
+    margin-bottom: calc(12px * (100vw / 1280));
+  }
+
+  .taller-description {
+    font-size: calc(14px * (100vw / 1280));
+    margin-bottom: calc(20px * (100vw / 1280));
+    min-height: calc(48px * (100vw / 1280));
+  }
+
+  .taller-footer {
+    padding-top: calc(16px * (100vw / 1280));
+  }
+
+  .taller-info {
+    gap: calc(16px * (100vw / 1280));
+  }
+
+  .info-item {
+    gap: calc(6px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .taller-button {
+    padding: calc(10px * (100vw / 1280)) calc(28px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+
+  .talleres-pagination {
+    gap: calc(12px * (100vw / 1280));
+    margin-top: calc(40px * (100vw / 1280));
+  }
+
+  .pagination-dot {
+    width: calc(60px * (100vw / 1280));
+    height: calc(8px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+
+  .pagination-dot.active {
+    width: calc(80px * (100vw / 1280));
+  }
+}
+
+.talleres-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.talleres-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.talleres-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Tarjeta de taller */
+.taller-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.taller-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.taller-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+}
+
+.taller-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.taller-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.taller-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.taller-type {
+  background-color: #fff;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.taller-rating {
+  background-color: #d4a574;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.taller-favorite {
+  background-color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taller-favorite:hover {
+  background-color: #ffe5e5;
+}
+
+.taller-favorite svg {
+  color: #333;
+}
+
+.taller-favorite:hover svg {
+  fill: #ff6b6b;
+  color: #ff6b6b;
+}
+
+/* Contenido de la tarjeta */
+.taller-content {
+  padding: 16px;
+}
+
+.taller-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.taller-description {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 0;
+  min-height: 40px;
+}
+
+/* Footer de la tarjeta */
+.taller-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 12px;
+}
+
+.taller-date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.taller-date-info svg {
+  color: #666;
+  flex-shrink: 0;
+}
+
+.taller-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.taller-info {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+.info-item svg {
+  color: #999;
+}
+
+.taller-button {
+  background-color: #d4a574;
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taller-button:hover {
+  background-color: #c08d5a;
+}
+
+/* Paginación */
+.talleres-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.pagination-dot {
+  width: 60px;
+  height: 8px;
+  background-color: #c0a789;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background-color: #6b5d4f;
+  width: 80px;
+}
+
+.pagination-dot:hover {
+  background-color: #8b7355;
+}
+
+/* Responsive */
+@media (max-width: 1279px) {
+  .talleres-section {
+    padding: 60px 40px;
+  }
+
+  .talleres-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .talleres-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .talleres-section {
+    padding: 40px 20px;
+  }
+
+  .talleres-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .talleres-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .taller-image-container {
+    height: 220px;
+  }
+}

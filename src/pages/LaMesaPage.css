@@ -1,0 +1,485 @@
+.lamesa-page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.lamesa-page-hero {
+  background-color: #fff;
+  padding: 120px 60px 60px 60px;
+  text-align: center;
+}
+
+.lamesa-page-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lamesa-page-title {
+  font-size: 72px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Georgia", serif;
+  color: #000;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.lamesa-page-subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lamesa-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* Featured Post */
+.lamesa-page-featured {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-card-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.featured-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.featured-card-badges {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.featured-badge-type,
+.featured-badge-new {
+  background-color: #fff;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.featured-badge-new {
+  background-color: #d4a574;
+  color: #fff;
+}
+
+.featured-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f8f5f0;
+}
+
+.featured-card-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.featured-card-author {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Posts Grid */
+.lamesa-page-grid {
+  padding: 60px 0 80px 0;
+  background-color: #e8d7c3;
+}
+
+.posts-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.post-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.post-card-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.post-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-badge-type {
+  background-color: #fff;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.post-badge-rating {
+  background-color: #d4a574;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.post-favorite {
+  background-color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post-favorite:hover {
+  background-color: #ffe5e5;
+}
+
+.post-favorite svg {
+  color: #333;
+}
+
+.post-favorite:hover svg {
+  fill: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.post-card-content {
+  padding: 16px;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.post-card-description {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 0;
+  min-height: 40px;
+}
+
+.post-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 12px;
+}
+
+.post-date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.post-date-info svg {
+  color: #666;
+  flex-shrink: 0;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.post-info {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+.info-item svg {
+  color: #999;
+}
+
+.post-button {
+  background-color: #d4a574;
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post-button:hover {
+  background-color: #c08d5a;
+}
+
+/* Responsive */
+@media (min-width: 1920px) {
+  .posts-grid {
+    gap: 20px;
+  }
+
+  .post-card {
+    width: 300px;
+  }
+
+  .post-card-image-container {
+    height: 220px;
+  }
+
+  .post-card-content {
+    padding: 24px;
+  }
+
+  .post-card-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .post-card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 48px;
+  }
+
+  .post-card-footer {
+    padding-top: 16px;
+  }
+
+  .post-info {
+    gap: 16px;
+  }
+
+  .info-item {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .post-button {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .post-badge-type,
+  .post-badge-rating {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .post-favorite {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .lamesa-page-grid {
+    padding: 60px 60px 80px;
+  }
+
+  .posts-grid {
+    gap: 16px;
+  }
+
+  .post-card {
+    border-radius: calc(8px * (100vw / 1280));
+  }
+
+  .post-card-image-container {
+    height: 220px;
+  }
+
+  .post-card-badges {
+    top: calc(16px * (100vw / 1280));
+    left: calc(16px * (100vw / 1280));
+    right: calc(16px * (100vw / 1280));
+    gap: calc(12px * (100vw / 1280));
+  }
+
+  .post-badge-type,
+  .post-badge-rating {
+    padding: calc(6px * (100vw / 1280)) calc(16px * (100vw / 1280));
+    border-radius: calc(20px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .post-favorite {
+    width: calc(40px * (100vw / 1280));
+    height: calc(40px * (100vw / 1280));
+  }
+
+  .post-card-content {
+    padding: calc(24px * (100vw / 1280));
+  }
+
+  .post-card-title {
+    font-size: calc(22px * (100vw / 1280));
+    margin-bottom: calc(12px * (100vw / 1280));
+  }
+
+  .post-card-description {
+    font-size: calc(14px * (100vw / 1280));
+    margin-bottom: calc(20px * (100vw / 1280));
+    min-height: calc(48px * (100vw / 1280));
+  }
+
+  .post-card-footer {
+    padding-top: calc(16px * (100vw / 1280));
+  }
+
+  .post-info {
+    gap: calc(16px * (100vw / 1280));
+  }
+
+  .info-item {
+    gap: calc(6px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .post-button {
+    padding: calc(10px * (100vw / 1280)) calc(28px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+}
+
+@media (max-width: 1279px) {
+  .lamesa-page-hero {
+    padding: 100px 40px 60px;
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lamesa-page-hero {
+    padding: 80px 30px 60px;
+  }
+
+  .lamesa-page-title {
+    font-size: 48px;
+  }
+
+  .lamesa-page-subtitle {
+    font-size: 18px;
+  }
+
+  .lamesa-page-container {
+    padding: 0 30px;
+  }
+
+  .lamesa-page-grid {
+    padding: 40px 20px;
+  }
+
+  .post-card-image-container {
+    height: 220px;
+  }
+}

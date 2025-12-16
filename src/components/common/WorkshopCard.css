@@ -1,0 +1,328 @@
+/* Workshop Card Component */
+.workshop-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
+  height: 480px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.workshop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.workshop-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+}
+
+.workshop-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.workshop-card-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.workshop-badges-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workshop-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workshop-badge-type {
+  background-color: #fff;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.workshop-badge-category {
+  background-color: #8b7355;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.workshop-badge-rating {
+  background-color: #d4a574;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.workshop-favorite {
+  background-color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.workshop-favorite:hover {
+  background-color: #ffe5e5;
+}
+
+.workshop-favorite svg {
+  color: #333;
+}
+
+.workshop-favorite:hover svg {
+  fill: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.workshop-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.workshop-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.workshop-card-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.workshop-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.workshop-date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.workshop-date-info svg {
+  color: #666;
+  flex-shrink: 0;
+}
+
+.workshop-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.workshop-info {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.workshop-info-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.workshop-info-item svg {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.workshop-button {
+  background-color: #d4a574;
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.workshop-button:hover {
+  background-color: #c08d5a;
+}
+
+/* Responsive - 1920px+ */
+@media (min-width: 1920px) {
+  .workshop-card {
+    width: 300px;
+  }
+
+  .workshop-card-image-container {
+    height: 220px;
+  }
+
+  .workshop-card-content {
+    padding: 24px;
+  }
+
+  .workshop-card-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .workshop-card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 48px;
+  }
+
+  .workshop-card-footer {
+    padding-top: 16px;
+  }
+
+  .workshop-info {
+    gap: 16px;
+  }
+
+  .workshop-info-item {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .workshop-button {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .workshop-badge-type,
+  .workshop-badge-rating {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .workshop-favorite {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Responsive - 1280px to 1919px */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .workshop-card {
+    border-radius: calc(8px * (100vw / 1280));
+  }
+
+  .workshop-card-image-container {
+    height: 220px;
+  }
+
+  .workshop-card-badges {
+    top: calc(16px * (100vw / 1280));
+    left: calc(16px * (100vw / 1280));
+    right: calc(16px * (100vw / 1280));
+    gap: calc(12px * (100vw / 1280));
+  }
+
+  .workshop-badge-type,
+  .workshop-badge-rating {
+    padding: calc(6px * (100vw / 1280)) calc(16px * (100vw / 1280));
+    border-radius: calc(20px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .workshop-favorite {
+    width: calc(40px * (100vw / 1280));
+    height: calc(40px * (100vw / 1280));
+  }
+
+  .workshop-card-content {
+    padding: calc(24px * (100vw / 1280));
+  }
+
+  .workshop-card-title {
+    font-size: calc(22px * (100vw / 1280));
+    margin-bottom: calc(12px * (100vw / 1280));
+  }
+
+  .workshop-card-description {
+    font-size: calc(14px * (100vw / 1280));
+    margin-bottom: calc(20px * (100vw / 1280));
+    min-height: calc(48px * (100vw / 1280));
+  }
+
+  .workshop-card-footer {
+    padding-top: calc(16px * (100vw / 1280));
+  }
+
+  .workshop-info {
+    gap: calc(16px * (100vw / 1280));
+  }
+
+  .workshop-info-item {
+    gap: calc(6px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+  }
+
+  .workshop-button {
+    padding: calc(10px * (100vw / 1280)) calc(28px * (100vw / 1280));
+    font-size: calc(14px * (100vw / 1280));
+    border-radius: calc(4px * (100vw / 1280));
+  }
+}
+
+@media (max-width: 768px) {
+  .workshop-card-image-container {
+    height: 220px;
+  }
+}

@@ -1,27 +1,18 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TextCarousel from './components/TextCarousel'
-import Talleres from './components/Talleres'
-import AprendeSinMiedo from './components/AprendeSinMiedo'
-import SobreMi from './components/SobreMi'
-import LaMesa from './components/LaMesa'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import LaMesaPage from './pages/LaMesaPage'
+import BlogPost from './pages/BlogPost'
 import './App.css'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <TextCarousel />
-      <Talleres />
-      <AprendeSinMiedo />
-      <SobreMi />
-      <LaMesa />
-      <CTA />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/la-mesa" element={<LaMesaPage />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
+    </Router>
   )
 }
 
