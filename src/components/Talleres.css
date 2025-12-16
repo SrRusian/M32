@@ -1,6 +1,8 @@
 .talleres-section {
   background-color: #e8d7c3;
   padding: 50px 60px 50px 60px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Talleres para pantallas >= 1920px */

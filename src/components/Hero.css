@@ -1,11 +1,13 @@
 .hero {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 650px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  z-index: 0;
 }
 
 /* Hero 100vh para pantallas >= 1920px */
@@ -72,16 +74,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/src/assets/images/hero.png');
+  background-image: url("/src/assets/images/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* Overlay oscuro opcional para mejorar legibilidad del texto */
 .hero-background::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -95,7 +97,8 @@
   padding-top: 76px; /* Altura del navbar */
   max-width: 800px;
   color: #fff;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
 }
 
 .hero-title {
@@ -103,7 +106,7 @@
   font-weight: 700;
   line-height: 1;
   margin: 0 0 24px 0;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 .hero-subtitle {

@@ -1,6 +1,6 @@
 .footer {
   background-color: #000;
-  height: 174px;
+  height: 140px;
   padding: 40px 60px;
   border-top: 1px solid #222;
   display: flex;
@@ -58,7 +58,7 @@
 .footer-logo {
   color: #fff;
   font-size: 32px;
-  font-family: 'Brush Script MT', cursive;
+  font-family: "Brush Script MT", cursive;
   font-weight: 400;
   font-style: italic;
   margin: 0;
@@ -98,7 +98,7 @@
 }
 
 .social-link {
-  color: #C9A882;
+  color: #c9a882;
   text-decoration: none;
   display: flex;
   align-items: center;
